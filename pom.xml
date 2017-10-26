@@ -1,0 +1,209 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>br.com.romeritoalencar</groupId>
+  <artifactId>system-management-web</artifactId>
+  <packaging>war</packaging>
+  <version>0.0.1-SNAPSHOT</version>
+  <name>system-management-web Maven Webapp</name>
+  <url>http://maven.apache.org</url>
+  <build>
+    <finalName>system-management-web</finalName>
+  </build>
+  
+  <!-- Repositories -->
+  <repositories>
+    <repository>
+        <id>central</id>
+        <name>Maven Repository</name>
+        <url>http://repo1.maven.org/maven2</url>
+    </repository>
+    <repository>
+        <id>jboss</id>
+        <url>http://repository.jboss.org/nexus/content/groups/public-jboss/</url>
+    </repository>
+    <repository>
+        <id>spring-milestones</id>
+        <name>Spring Milestones</name>
+        <url>https://repo.spring.io/libs-milestone</url>
+    </repository>
+    
+      <repository>
+        <id>Prime-Faces</id>
+        <name>Prime Faces</name>
+        <url>http://repository.primefaces.org/</url>
+    </repository>
+    
+    
+  </repositories> 
+
+  <!-- UTF-8 -->
+  <properties>
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+  </properties>
+  
+  <!-- JSF 2.2 -->
+  <dependencies>  
+  <dependency>
+        <groupId>javax.faces</groupId>
+        <artifactId>javax.faces-api</artifactId>
+        <version>2.2</version>
+  </dependency>
+  <dependency>
+        <groupId>javax.servlet</groupId>
+        <artifactId>jstl</artifactId>
+        <version>1.2</version>
+  </dependency>
+  <dependency>
+        <groupId>javax.servlet</groupId>
+        <artifactId>servlet-api</artifactId>
+        <version>2.5</version>
+        </dependency>
+  <dependency>
+        <groupId>commons-beanutils</groupId>
+        <artifactId>commons-beanutils</artifactId>
+        <version>1.7.0</version>
+  </dependency>
+  <dependency>
+        <groupId>commons-digester</groupId>
+        <artifactId>commons-digester</artifactId>
+        <version>2.1</version>
+  </dependency>
+  <dependency>
+        <groupId>commons-logging</groupId>
+        <artifactId>commons-logging</artifactId>
+        <version>1.1.1</version>
+  </dependency>
+  <!-- THE END -->
+  
+  <!-- PRIMEFACES 2.1  -->
+  <dependency>
+    	<groupId>org.primefaces</groupId>
+    	<artifactId>primefaces</artifactId>
+   		<version>2.1</version>
+  </dependency>
+
+    
+  <!-- HIBERNATE 3.5.2 -->
+  <dependency>
+        <groupId>org.hibernate</groupId>
+        <artifactId>hibernate-annotations</artifactId>
+        <version>3.5.2-Final</version>
+  </dependency>
+  <dependency>
+        <groupId>org.hibernate</groupId>
+        <artifactId>hibernate-core</artifactId>
+         <version>3.5.2-Final</version>
+  </dependency>
+  <dependency>
+        <groupId>org.hibernate</groupId>
+        <artifactId>hibernate-entitymanager</artifactId>
+        <version>3.5.2-Final</version>
+  </dependency>
+
+  <dependency>
+        <groupId>javassist</groupId>
+        <artifactId>javassist</artifactId>
+        <version>3.8.0.GA</version>
+  </dependency>
+  <dependency>
+        <groupId>org.slf4j</groupId>
+        <artifactId>slf4j-log4j12</artifactId>
+        <version>1.5.10</version>
+  </dependency>
+  <dependency>
+        <groupId>antlr</groupId>
+        <artifactId>antlr</artifactId>
+        <version>2.7.6</version>
+  </dependency>
+  <dependency>
+        <groupId>dom4j</groupId>
+        <artifactId>dom4j</artifactId>
+        <version>1.6.1</version>
+  </dependency>
+  <dependency>
+        <groupId>commons-collections</groupId>
+        <artifactId>commons-collections</artifactId>
+        <version>3.2.1</version>
+  </dependency>
+  <!-- THE END -->
+  
+  <!-- SPRING FRAMEWORK -->
+  <dependency>
+    	<groupId>org.springframework</groupId>
+    	<artifactId>spring-core</artifactId>
+    	<version>3.1.1.RELEASE</version>
+  </dependency>
+  
+  <dependency>
+    	<groupId>org.springframework</groupId>
+    	<artifactId>spring-web</artifactId>
+  	  	<version>3.1.1.RELEASE</version>
+  </dependency>
+  
+  <dependency>
+		<groupId>org.springframework</groupId>
+		<artifactId>spring-webmvc</artifactId>
+		<version>3.1.1.RELEASE</version>
+  </dependency>
+ 
+ 
+  <!-- SPRING SECURITY -->
+  <dependency>
+    	<groupId>org.springframework.security</groupId>
+    	<artifactId>spring-security-core</artifactId>
+    	<version>3.0.5.RELEASE</version>
+  </dependency>
+  
+  <dependency>
+    	<groupId>org.springframework.security</groupId>
+    	<artifactId>spring-security-web</artifactId>
+    	<version>3.0.5.RELEASE</version>
+  </dependency>
+  
+  <dependency>
+    	<groupId>org.springframework.security</groupId>
+    	<artifactId>spring-security-config</artifactId>
+    	<version>3.0.5.RELEASE</version>
+  </dependency>
+
+  <dependency>
+    	<groupId>org.springframework.security</groupId>
+    	<artifactId>spring-security-taglibs</artifactId>
+    	<version>3.0.5.RELEASE</version>
+  </dependency>
+  <!-- THE END -->
+  
+  
+  <!-- TO EXECUTE "EL 3 -->
+  <dependency>
+        <groupId>javax.el</groupId>
+        <artifactId>javax.el-api</artifactId>
+        <version>3.0.0</version>
+  </dependency>
+  <dependency>
+        <groupId>org.glassfish.web</groupId>
+        <artifactId>el-impl</artifactId>
+        <version>2.2</version>
+  </dependency>
+  <!-- THE END -->    
+  
+  <!-- DATA BASE -->  
+    <dependency>
+        <groupId>mysql</groupId>
+        <artifactId>mysql-connector-java</artifactId>
+        <version>5.1.21</version>
+    </dependency>
+  <!-- THE END --> 
+   
+  <!-- TEST --> 
+    <dependency>
+        <groupId>junit</groupId>
+        <artifactId>junit</artifactId>
+        <version>3.8.1</version>
+        <scope>test</scope>
+    </dependency>
+  </dependencies>
+  <!-- THE END -->
+  
+</project>
