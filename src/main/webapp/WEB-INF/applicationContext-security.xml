@@ -7,7 +7,7 @@
                         http://www.springframework.org/schema/security
                         http://www.springframework.org/schema/security/spring-security-3.0.xsd ">
 	<http>
-	    <intercept-url pattern="index.html" />
+	    <intercept-url pattern="/bootstrap/index.html" />
 		<intercept-url pattern="/admin/**" access="ROLE_ADMINISTRADOR" />
 		<intercept-url pattern="/restrito/**" access="ROLE_USUARIO" />
 		<form-login login-page="/publico/login.jsf"

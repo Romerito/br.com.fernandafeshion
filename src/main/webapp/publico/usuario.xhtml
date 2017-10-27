@@ -8,7 +8,7 @@
 <ui:composition template="/templates/interna.xhtml">
 
 	<ui:define name="titulo">
-    	Cadastro de Usuários
+    	Cadastro de Usuï¿½rios
 	</ui:define>
 
 	<ui:define name="corpo">
@@ -20,7 +20,7 @@
 			
 			<h:panelGrid columns="2">
 				<h:outputLabel value="Nome:" for="nome"/>
-				<h:inputText id="nome" label="Nome" value="#{usuarioBean.usuario.nome}" size="30" maxlength="30" required="true" requiredMessage="Você não tem nome?">
+				<h:inputText id="nome" label="Nome" value="#{usuarioBean.usuario.nome}" size="30" maxlength="30" required="true" requiredMessage="Vocï¿½ nï¿½o tem nome?">
 					<f:validateLength minimum="10" maximum="30"/>
 				</h:inputText>
 				
@@ -38,7 +38,7 @@
 						label="e-Mail" 
 						value="#{usuarioBean.usuario.email}" 
 						size="50" maxlength="50" required="true" 
-						validatorMessage="e-Mail inválido">
+						validatorMessage="e-Mail invï¿½lido">
 						<f:validateRegex pattern="[a-zA-Z0-9\-\_\.]+@[a-zA-Z0-9\-\_\.]+"/>
 					</h:inputText>
 					<h:message for="email"/> 
@@ -46,7 +46,7 @@
 				
 				<h:outputLabel value="Idioma:" for="idioma"/>
 				<h:selectOneMenu id="idioma" value="#{usuarioBean.usuario.idioma}">
-					<f:selectItem itemValue="pt_BR" itemLabel="Português"/>
+					<f:selectItem itemValue="pt_BR" itemLabel="Portuguï¿½s"/>
 					<f:selectItem itemValue="en_US" itemLabel="English"/>
 					<f:selectItem itemValue="es_ES" itemLabel="Espanol"/>
 				</h:selectOneMenu>
@@ -56,7 +56,7 @@
 				             label="Login" 
 				             value="#{usuarioBean.usuario.login}" 
 				             size="15" maxlength="15" required="true"
-				             validatorMessage="Login deve ter no mínimo 5 e no máximo 15 caracters e só pode ter os simbolos '.' e '_'.">
+				             validatorMessage="Login deve ter no mï¿½nimo 5 e no mï¿½ximo 15 caracters e sï¿½ pode ter os simbolos '.' e '_'.">
 					<f:validateRegex pattern="([a-z]|[0-9]|[.]|[_]){5,15}"/>
 				</h:inputText>
 	
@@ -70,8 +70,8 @@
 			<h:panelGroup rendered="#{empty contextoBean.usuarioLogado}">
 				<fieldset><legend>Conta Inicial</legend>
 				<h:panelGrid columns="2">
-					<h:outputLabel value="Descrição: " for="descricao" />
-					<h:inputText id="descricao" label="Descrição" value="#{usuarioBean.conta.descricao}" required="true" maxlength="45" />
+					<h:outputLabel value="Descriï¿½ï¿½o: " for="descricao" />
+					<h:inputText id="descricao" label="Descriï¿½ï¿½o" value="#{usuarioBean.conta.descricao}" required="true" maxlength="45" />
 	
 					<h:outputLabel value="Saldo Inicial: " for="saldoInicial" />
 					<h:inputText id="saldoInicial" value="#{usuarioBean.conta.saldoInicial}" size="10">
