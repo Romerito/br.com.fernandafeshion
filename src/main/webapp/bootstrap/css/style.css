@@ -1749,8 +1749,19 @@ p.single-price-text {
     font-size: 1.1em;
     padding: 13px;
 }
-.key input[type="text"], .key input[type="password"] {
-    width: 89%;
+.keya inputText[type="text"], .key input[type="password"] {
+    width: 100%;
+    padding: 10px 10px;
+    font-size: 1em;
+    border: none;
+    border-bottom: none;
+    outline: none;
+    color: #999;
+    float: left;
+    background: none;
+}
+.key inputText[type="text"], .key inputText[type="password"] {
+    width: 100%;
     padding: 10px 10px;
     font-size: 1em;
     border: none;
@@ -2942,6 +2953,10 @@ p.w3-agile{
 	.key input[type="text"], .key input[type="password"] {
 		width: 83%;
 	}
+	}
+	.key input[type="text"]{
+		width: 40%;
+	}
 	.single-top-right .w3ls-cart {
 		width: 38%;
 	}
@@ -3092,6 +3107,9 @@ p.w3-agile{
 		height: 250px;
 	}
 	.key input[type="text"], .key input[type="password"] {
+		padding: 7px 10px;
+	}
+	.key inputText[type="text"], .key inputText[type="password"] {
 		padding: 7px 10px;
 	}
 	.key i {

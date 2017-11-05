@@ -5,20 +5,18 @@ import java.util.List;
 import categoria.CategoriaRN;
 import util.DAOFactory;
 
+/**
+ * @author Romerito Alencar email: romerito.alencar@gmail.com telefone 5561 9
+ *         8611-5721
+ *
+ */
+
 public class UsuarioRN {
 
-	private UsuarioDAO	usuarioDAO;
+	private UsuarioDAO usuarioDAO;
 
 	public UsuarioRN() {
 		this.usuarioDAO = DAOFactory.criarUsuarioDAO();
-	}
-
-	public Usuario carregar(Integer codigo) {
-		return this.usuarioDAO.carregar(codigo);
-	}
-
-	public Usuario buscarPorLogin(String login) {
-		return this.usuarioDAO.buscarPorLogin(login);
 	}
 
 	public void salvar(Usuario usuario) {
@@ -38,17 +36,24 @@ public class UsuarioRN {
 		}
 	}
 
+	public Usuario carregar(Integer codigo) {
+		return this.usuarioDAO.carregar(codigo);
+	}
+
+	public Usuario buscarPorLogin(String login) {
+		return this.usuarioDAO.buscarPorLogin(login);
+	}
+
 	public void excluir(Usuario usuario) {
-		
+
 		CategoriaRN categoriaRN = new CategoriaRN();
 		categoriaRN.excluir(usuario);
-		
+
 		this.usuarioDAO.excluir(usuario);
 	}
 
 	public List<Usuario> listar() {
 		return this.usuarioDAO.listar();
 	}
-	
 
 }

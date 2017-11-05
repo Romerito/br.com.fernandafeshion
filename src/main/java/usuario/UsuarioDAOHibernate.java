@@ -4,9 +4,8 @@ package usuario;
 import java.util.List;
 import org.hibernate.Query;
 import org.hibernate.Session;
-
 /**
- * @author Romerito Alencar
+ * @author Romerito Alencar email: romerito.alencar@gmail.com telefone 61 9 8611-5721
  *
  */
 public class UsuarioDAOHibernate implements UsuarioDAO {
@@ -57,6 +56,7 @@ public class UsuarioDAOHibernate implements UsuarioDAO {
 
 	@Override
 	public List<Usuario> listar() {
+		
 		return this.session.createCriteria(Usuario.class).list();
 	}
 

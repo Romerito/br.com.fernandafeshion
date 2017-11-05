@@ -1,5 +1,6 @@
 package web;
 
+import java.io.Serializable;
 import java.util.List;
 
 import javax.faces.application.FacesMessage;
@@ -12,9 +13,15 @@ import conta.Conta;
 import conta.ContaRN;
 import usuario.Usuario;
 import usuario.UsuarioRN;
+
+/**
+ * @author Romerito Alencar email: romerito.alencar@gmail.com telefone 5561 9 8611-5721
+ *
+ */
+
 @ManagedBean(name="usuarioBean")
 @RequestScoped
-public class UsuarioBean {
+public class UsuarioBean implements Serializable {
 	private Usuario usuario = new Usuario();
 	private String confirmarSenha;
 	private List<Usuario> lista;

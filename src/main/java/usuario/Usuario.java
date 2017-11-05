@@ -42,14 +42,14 @@ public class Usuario implements Serializable {
 	@Id
 	@GeneratedValue
 	private Integer codigo;
-	private String nome;
-	private String email;
+	private String  nome;
+	private String  email;
 	@org.hibernate.annotations.NaturalId
-	private String login;
-	private String senha;
-	private Date nascimento;
-	private String celular;
-	private String idioma;
+	private String  login;
+	private String  senha;
+	private Date    nascimento;
+	private String  celular;
+	private String  idioma;
 	private boolean ativo;
 
 	@ElementCollection(targetClass = String.class)
