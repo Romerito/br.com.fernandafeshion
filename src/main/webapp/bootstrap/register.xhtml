@@ -29,8 +29,18 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 	<!-- //font -->
 	<script src="js/jquery-1.11.1.min.js"></script>
 	<script src="js/bootstrap.js"></script>
+	<script src="http://digitalbush.com/wp-content/uploads/2014/10/jquery.maskedinput.js"></script>
+	
+	<script>
+	jQuery(function($){
+		   $("#date").mask("99/99/9999",{placeholder:"mm/dd/yyyy"});
+		   $("#phone").mask("(999) 999-9999");
+		   $("#cep").mask("99999-999");
+		});
+	</script>
 </h:head>
 <h:body>
+
 	<!-- Header -->
 	<div class="header-top-w3layouts">
 
@@ -214,23 +224,47 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 			<div class="form-w3agile">
 
 				<h3>Criar Cadastro</h3>
-				<h:form>
-					Nome:	<h:inputText value="#{clienteBean.cliente.name}" size="40" maxlength="50" /> 
+				<h:form prependId="false">
 					
-					Email:	<h:inputText value="" size="40" maxlength="50" /> 
-					
-					Senha:	<h:inputText value="" size="40" maxlength="50" /> 
-					
-					CEP:	<br /><h:inputText value="" size="20" maxlength="20" /> <a href="http://www2.correios.com.br/sistemas/rastreamento/" ><font color="red">  Não sei meu CEP </font></a><br />
+					<b> Nome: </b>
+					<h:inputText id="name" label="Nome"
+						value="#{clienteBean.cliente.name}" size="40" maxlength="50"
+						required="true" requiredMessage="Não esqueça o nome!?"></h:inputText>
 
-					<h:selectBooleanCheckbox></h:selectBooleanCheckbox>
+					<b> Email: </b>
+					<h:inputText id="email" label="e-Mail"
+						value="#{clienteBean.cliente.email}" size="40" maxlength="50"
+						required="true" validatorMessage="e-Mail inv�lido">
+						<f:validateRegex pattern="[a-zA-Z0-9\-\_\.]+@[a-zA-Z0-9\-\_\.]+" />
+					</h:inputText>
+
+					<b> Senha: </b>
+					<h:inputSecret id="senha" label="Senha"
+						value="#{clienteBean.cliente.password}" size="40" maxlength="50"
+						required="true" redisplay="true"></h:inputSecret>
+
+					<b> CEP: </b>
+					<br />
 					
-						<font color="blue"> Desejo receber emails promocionais e informativos. </font>
-					
-					<input type="submit" value="Criar conta" />
-					
-					
-					<center><p> Já é cadastrado?<a href="login.html"><font color="red"> Acesse sua conta </font></a></p></center>
+					<h:inputText id="cep" value="#{clienteBean.cliente.cep}" size="20"/>
+
+					<a href="http://www2.correios.com.br/sistemas/rastreamento/"><font
+						color="red"><b> Não sei meu CEP </b></font></a>
+					<br />
+
+					<h:selectBooleanCheckbox value="#{clienteBean.cliente.envMail}">
+						<f:selectItem itemValue="1" itemLabel="Number1 - 1" />
+					</h:selectBooleanCheckbox>
+
+					<font color="blue"> Desejo receber emails promocionais e
+						informativos. </font>
+					<h:commandButton action="#{clienteBean.salvar}" value="Salvar"/>
+					<center>
+						<p>
+							<b>Já é cadastrado?</b><a href="login.html"><font color="red">
+									<b>Acesse sua conta </b></font></a>
+						</p>
+					</center>
 				</h:form>
 			</div>
 		</div>

@@ -9,9 +9,9 @@ import java.util.List;
 
 import util.DAOFactory;
 
+
 /**
- * @author Romerito Alencar email: romerito.alencar@gmail.com telefone 5561 9
- *         8611-5721
+ * @author Romerito Alencar email: romerito.alencar@gmail.com telefone 5561 9 8611-5721 61 3054-6909
  *
  */
 

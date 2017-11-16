@@ -2,17 +2,13 @@ package web;
 
 import java.io.Serializable;
 
-import javax.faces.application.FacesMessage;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.RequestScoped;
-import javax.faces.context.FacesContext;
 
 import org.springframework.util.DigestUtils;
 
 import bootstrap.cliente.Cliente;
 import bootstrap.cliente.ClienteRN;
-import conta.ContaRN;
-import usuario.UsuarioRN;
 
 /**
  * @author Romerito Alencar email: romerito.alencar@gmail.com telefone 5561 9 8611-5721
@@ -30,11 +26,12 @@ public class ClienteBean  implements Serializable{
 	private String  	password;
 	private String 		cep;
 	private boolean 	envMail;
-	private String destinoSalvar = "index.html";
+	private String 		destinoSalvar;
+	
 	
 	public String salvar() {
 		
-		password = this.cliente.getPassaword();
+		password = this.cliente.getPassword();
 		
 		if(password != null && password.trim().length() == 0){
 			String senhaCripto = DigestUtils.md5DigestAsHex(password.getBytes());
@@ -43,8 +40,8 @@ public class ClienteBean  implements Serializable{
 		}
 		ClienteRN clienteRN = new ClienteRN();
 		clienteRN.salvar(this.cliente);
-			
-		return this.destinoSalvar;
+		
+		return "/index.html";
 	}
 
 	public Cliente getCliente() {

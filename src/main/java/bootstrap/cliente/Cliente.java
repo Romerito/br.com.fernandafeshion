@@ -8,7 +8,7 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 
 /**
- * @author Romerito Alencar email: romerito.alencar@gmail.com telefone 5561 9 8611-5721
+ * @author Romerito Alencar email: romerito.alencar@gmail.com telefone 5561 9 8611-5721 61 3054-6909
  *
  */
 @Entity
@@ -20,8 +20,8 @@ public class Cliente implements Serializable {
 	@GeneratedValue
 	private Integer 	id;
 	private String 		name;
-	private String 		email;
 	@org.hibernate.annotations.NaturalId
+	private String 		email;
 	private String 		password;
 	private String 		cep;
 	private boolean 	envMail;
@@ -31,9 +31,18 @@ public class Cliente implements Serializable {
 	public Cliente() {
 		
 	}
-	public Cliente(String name, String email, String senha, String cep, String envMail) {
-		// TODO Auto-generated constructor stub
+	
+
+	public Cliente(Integer id, String name, String email, String password, String cep, boolean envMail) {
+		super();
+		this.id = id;
+		this.name = name;
+		this.email = email;
+		this.password = password;
+		this.cep = cep;
+		this.envMail = envMail;
 	}
+
 
 	@Override
 	public int hashCode() {
@@ -80,7 +89,7 @@ public class Cliente implements Serializable {
 	public void setEmail(String email) {
 		this.email = email;
 	}
-	public String getPassaword() {
+	public String getPassword() {
 		return password;
 	}
 	public void setPassword(String password) {
