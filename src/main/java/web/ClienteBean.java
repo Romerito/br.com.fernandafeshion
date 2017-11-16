@@ -18,7 +18,7 @@ import bootstrap.cliente.ClienteRN;
 
 @ManagedBean(name="clienteBean")
 @RequestScoped
-public class ClienteBean  implements Serializable{
+public class ClienteBean  implements Serializable {
 	
 	private Cliente 	cliente = new Cliente();
 	private String 		name;
@@ -33,7 +33,7 @@ public class ClienteBean  implements Serializable{
 		
 		password = this.cliente.getPassword();
 		
-		if(password != null && password.trim().length() == 0){
+		if(password != null && password.trim().length() > 0){
 			String senhaCripto = DigestUtils.md5DigestAsHex(password.getBytes());
 			this.cliente.setPassword(senhaCripto);
 		
@@ -41,7 +41,7 @@ public class ClienteBean  implements Serializable{
 		ClienteRN clienteRN = new ClienteRN();
 		clienteRN.salvar(this.cliente);
 		
-		return "/index.html";
+		return "index";
 	}
 
 	public Cliente getCliente() {
