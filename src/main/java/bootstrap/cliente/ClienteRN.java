@@ -27,6 +27,7 @@ public class ClienteRN {
 
 		Integer id = cliente.getId();
 		if (id == null || id == 0) {
+			cliente.getPermissao().add("ROLE_USUARIO");
 			this.clienteDAO.salvar(cliente);
 		} else {
 			this.clienteDAO.atualizar(cliente);

@@ -26,7 +26,6 @@ public class ClienteDAOHibernate implements ClienteDAO {
 
 	@Override
 	public void atualizar(Cliente cliente) {
-		// TODO Auto-generated method stub
 		
 	}
 

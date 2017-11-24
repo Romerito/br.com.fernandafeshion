@@ -7,12 +7,12 @@
                         http://www.springframework.org/schema/security
                         http://www.springframework.org/schema/security/spring-security-3.0.xsd ">
 	<http>
-	    <intercept-url pattern="/bootstrap/index.html" />
+	    <intercept-url pattern="/bootstrap/index.jsf" />
 		<intercept-url pattern="/admin/**" access="ROLE_ADMINISTRADOR" />
 		<intercept-url pattern="/restrito/**" access="ROLE_USUARIO" />
-		<form-login login-page="/publico/login.jsf"
-			always-use-default-target="true" default-target-url="/restrito/principal.jsf"
-			authentication-failure-url="/publico/login.jsf?login_error=1" />
+		<form-login login-page="/bootstrap/login.jsf"
+			always-use-default-target="true" default-target-url="/bootstrap/index.jsf"
+			authentication-failure-url="/bootstrap/login.jsf?login_error=1" />
 		<logout/>
 		<remember-me />
 	</http>
@@ -21,10 +21,10 @@
              <password-encoder hash="md5"/>   
 			<jdbc-user-service data-source-ref="systemanagement"
 				authorities-by-username-query="SELECT u.email, p.permissao 
-									           FROM usuario u, usuario_permissao p 
-									           WHERE u.codigo = p.usuario 
+									           FROM cliente u, cliente_permissao p 
+									           WHERE u.id = p.cliente 
                                                AND u.email = ?"
-				users-by-username-query="SELECT email, senha, ativo FROM usuario WHERE email = ?"/>
+				users-by-username-query="SELECT email, password FROM cliente WHERE email = ?"/>
 		</authentication-provider>
 	</authentication-manager>
 </b:beans>

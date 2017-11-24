@@ -1,7 +1,5 @@
 package web;
 
-import java.io.Serializable;
-
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.RequestScoped;
 
@@ -11,37 +9,35 @@ import bootstrap.cliente.Cliente;
 import bootstrap.cliente.ClienteRN;
 
 /**
- * @author Romerito Alencar email: romerito.alencar@gmail.com telefone 5561 9 8611-5721
+ * @author Romerito Alencar email: romerito.alencar@gmail.com telefone 55613954-6909
  *
  */
 
-
-@ManagedBean(name="clienteBean")
+@ManagedBean(name = "clienteBean")
 @RequestScoped
-public class ClienteBean  implements Serializable {
-	
-	private Cliente 	cliente = new Cliente();
-	private String 		name;
-	private String 		email;
-	private String  	password;
-	private String 		cep;
-	private boolean 	envMail;
-	private String 		destinoSalvar;
-	
-	
-	public String salvar() {
-		
+public class ClienteBean {
+
+	private Cliente cliente = new Cliente();
+	private String name;
+	private String email;
+	private String password;
+	private String cep;
+	private boolean envMail;
+	private String destinoSalvar =  "index";
+
+	public String salvar(){
+
 		password = this.cliente.getPassword();
-		
-		if(password != null && password.trim().length() > 0){
+
+		if (password != null && password.trim().length() > 0) {
 			String senhaCripto = DigestUtils.md5DigestAsHex(password.getBytes());
 			this.cliente.setPassword(senhaCripto);
-		
 		}
+		
 		ClienteRN clienteRN = new ClienteRN();
 		clienteRN.salvar(this.cliente);
-		
-		return "index";
+
+		return this.destinoSalvar;
 	}
 
 	public Cliente getCliente() {
@@ -99,7 +95,5 @@ public class ClienteBean  implements Serializable {
 	public void setDestinoSalvar(String destinoSalvar) {
 		this.destinoSalvar = destinoSalvar;
 	}
-	
-	
-	
+
 }

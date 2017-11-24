@@ -19,13 +19,16 @@ public class ConexaoHibernateFilter implements Filter {
 		this.sf = HibernateUtil.getSessionFactory();
 	}
 
+	
+	
+	
+	
+	
 	public void doFilter(ServletRequest servletRequest, ServletResponse servletResponse, FilterChain chain)
 			throws ServletException {
 
 		try {
-
-			this.sf.getCurrentSession().beginTransaction();
-
+            this.sf.getCurrentSession().beginTransaction();
 			chain.doFilter(servletRequest, servletResponse);
 
 			this.sf.getCurrentSession().getTransaction().commit();
