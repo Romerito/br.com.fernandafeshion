@@ -218,8 +218,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 
 				<h3>Login</h3>
 
-				<form id="login" method="post"
-					action="${request.contextPath}/j_spring_security_check">
+				<form id="login" method="post" action="${request.contextPath}/j_spring_security_check">
 
 					<h:panelGroup rendered="#{!empty param.login_error}">
 						<span style="font-color: red"> Erro ao efetuar o login.</span>
@@ -227,16 +226,19 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 						Motivo: #{SPRING_SECURITY_LAST_EXCEPTION.message}
 					</h:panelGroup>
 
-					<i class="fa fa-envelope" aria-hidden="true" /> E-mail <br /> <input
-						type='text' name='j_username' size="40" maxlength="50" /> <i
-						class="fa fa-lock" aria-hidden="true" /> Senha: <br /> <input
-						type='password' name='j_password' size="40" maxlength="50" /> <br />
+					<i class="fa fa-envelope" aria-hidden="true" />
+                    E-mail <br /> 
+                    <input type='text' name='j_username' size="40" maxlength="50" /> 
+                           <i class="fa fa-lock" aria-hidden="true" /> 
+                    Senha: <br /> 
+                    <input type='password' name='j_password' size="40" maxlength="50" /> 
+                    <br />
 
-					<input type="checkbox" name="_spring_security_remember_me" />
-					Entrar automaticamente? <br /> <input type="submit" value="Entrar" />
+					<input type="checkbox" name="_spring_security_remember_me" /> Entrar automaticamente? <br /> 
+					<input type="submit" value="Entrar" />
 
 					<script>
-						document.getElementById("login").j_username.value = "#{SPRING_SECURITY_LAST_USERNAME}";
+						document.getElementById("email").j_username.value = "#{SPRING_SECURITY_LAST_USERNAME}";
 					</script>
 				</form>
 			</div>

@@ -32,6 +32,7 @@ public class Cliente implements Serializable {
 	private String password;
 	private String cep;
 	private boolean envMail;
+	private boolean ativo;
 
 	@ElementCollection(targetClass = String.class)
 	@JoinTable(name = "cliente_permissao", uniqueConstraints = {
@@ -41,6 +42,14 @@ public class Cliente implements Serializable {
 
 	public String getCep() {
 		return cep;
+	}
+
+	public boolean isAtivo() {
+		return ativo;
+	}
+
+	public void setAtivo(boolean ativo) {
+		this.ativo = ativo;
 	}
 
 	public void setCep(String cep) {
@@ -61,7 +70,7 @@ public class Cliente implements Serializable {
 
 	public void setId(Integer id) {
 		this.id = id;
-	}
+		}
 
 	public String getName() {
 		return name;
@@ -99,12 +108,14 @@ public class Cliente implements Serializable {
 	public int hashCode() {
 		final int prime = 31;
 		int result = 1;
+		result = prime * result + (ativo ? 1231 : 1237);
 		result = prime * result + ((cep == null) ? 0 : cep.hashCode());
 		result = prime * result + ((email == null) ? 0 : email.hashCode());
 		result = prime * result + (envMail ? 1231 : 1237);
 		result = prime * result + ((id == null) ? 0 : id.hashCode());
 		result = prime * result + ((name == null) ? 0 : name.hashCode());
 		result = prime * result + ((password == null) ? 0 : password.hashCode());
+		result = prime * result + ((permissao == null) ? 0 : permissao.hashCode());
 		return result;
 	}
 
@@ -117,6 +128,8 @@ public class Cliente implements Serializable {
 		if (getClass() != obj.getClass())
 			return false;
 		Cliente other = (Cliente) obj;
+		if (ativo != other.ativo)
+			return false;
 		if (cep == null) {
 			if (other.cep != null)
 				return false;
@@ -143,6 +156,11 @@ public class Cliente implements Serializable {
 			if (other.password != null)
 				return false;
 		} else if (!password.equals(other.password))
+			return false;
+		if (permissao == null) {
+			if (other.permissao != null)
+				return false;
+		} else if (!permissao.equals(other.permissao))
 			return false;
 		return true;
 	}

@@ -23,21 +23,30 @@ public class ClienteBean {
 	private String password;
 	private String cep;
 	private boolean envMail;
-	private String destinoSalvar =  "index";
+	private boolean ativo;
+	private String destinoSalvar = "index";
 
+	
 	public String salvar(){
-
 		password = this.cliente.getPassword();
-
+		this.cliente.setAtivo(true);
 		if (password != null && password.trim().length() > 0) {
 			String senhaCripto = DigestUtils.md5DigestAsHex(password.getBytes());
 			this.cliente.setPassword(senhaCripto);
 		}
 		
 		ClienteRN clienteRN = new ClienteRN();
-		clienteRN.salvar(this.cliente);
+		clienteRN.salvar(cliente);
 
 		return this.destinoSalvar;
+	}
+
+	public boolean isAtivo() {
+		return ativo;
+	}
+
+	public void setAtivo(boolean ativo) {
+		this.ativo = ativo;
 	}
 
 	public Cliente getCliente() {
