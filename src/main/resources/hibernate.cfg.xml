@@ -19,6 +19,7 @@
         <mapping class = "conta.Conta" />        
         <mapping class = "categoria.Categoria" />
         <mapping class = "bootstrap.cliente.Cliente" />
+        <mapping class = "mail.Mail" />
 		
 	</session-factory>
 </hibernate-configuration>

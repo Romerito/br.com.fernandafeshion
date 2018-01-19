@@ -6,6 +6,8 @@ import categoria.CategoriaDAO;
 import categoria.CategoriaDAOHibernate;
 import conta.ContaDAO;
 import conta.ContaDAOHibernate;
+import mail.MailDAO;
+import mail.MailDAOHibernate;
 import usuario.UsuarioDAO;
 import usuario.UsuarioDAOHibernate;
 
@@ -26,12 +28,16 @@ public class DAOFactory {
 		categoriaDAO.setSession(HibernateUtil.getSessionFactory().getCurrentSession());
 		return categoriaDAO;
 	}
+	public static MailDAO criarMailDAO() {
+		MailDAOHibernate mailDAO = new MailDAOHibernate();
+		mailDAO.setSession(HibernateUtil.getSessionFactory().getCurrentSession());
+		return mailDAO;
+	}
 	public static ClienteDAO criarClienteDAO() {
 		ClienteDAOHibernate clienteDAO = new ClienteDAOHibernate();
 		clienteDAO.setSession(HibernateUtil.getSessionFactory().getCurrentSession());
 		return clienteDAO;
 	}
-
 }
 
 		

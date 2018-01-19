@@ -1,19 +1,14 @@
 package bootstrap.cliente;
 
 import java.util.List;
-
 /**
- * @author Romerito Alencar email: romerito.alencar@gmail.com telefone 5561 9 8611-5721
- *
+ * @author Romerito Alencar 
+ * Empresa: James Softeware
+ * wwww.jamessoftware.com.br
+ * Telefone 61 3054-6909
+ * E-Mail: romerito.alencar@gmail.com
  */
-
 import util.DAOFactory;
-
-
-/**
- * @author Romerito Alencar email: romerito.alencar@gmail.com telefone 5561 9 8611-5721 61 3054-6909
- *
- */
 
 public class ClienteRN {
 

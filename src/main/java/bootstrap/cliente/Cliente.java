@@ -1,5 +1,11 @@
 package bootstrap.cliente;
-
+/**
+ * @author Romerito Alencar 
+ * Empresa: James Softeware
+ * wwww.jamessoftware.com.br
+ * Telefone 61 3054-6909
+ * E-Mail: romerito.alencar@gmail.com
+ */
 import java.io.Serializable;
 import java.util.HashSet;
 import java.util.Set;
@@ -14,11 +20,6 @@ import javax.persistence.JoinTable;
 import javax.persistence.Table;
 import javax.persistence.UniqueConstraint;
 
-/**
- * @author Romerito Alencar email: romerito.alencar@gmail.com telefone 5561 9
- *         8611-5721 61 3054-6909
- *
- */
 @Entity
 @Table(name = "cliente")
 public class Cliente implements Serializable {

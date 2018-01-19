@@ -62,4 +62,13 @@
   <res-sharing-scope>Shareable</res-sharing-scope>
  </resource-ref>
  <!-- THE END -->
+ 
+ <!-- MAIL -->
+ <resource-ref>
+ 	<description>Mail mail</description>
+ 	<res-ref-name>java:/jboss/mail/mail</res-ref-name>
+ 	<res-type>javax.mail.Session</res-type>
+ 	<res-auth>Container</res-auth>
+ </resource-ref>
 </web-app>
+<!-- THE END -->
