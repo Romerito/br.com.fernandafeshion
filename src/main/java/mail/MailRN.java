@@ -1,16 +1,6 @@
 package mail;
 /**
  * @author Romerito Alencar 
- * email: romerito.alencar@gmail.com
- *
- *Empresa: James Softeware
- * wwww.jamessoftware.com.br
- * telefone 61 9 8611-5721
- */
-import java.util.Date;
-
-/**
- * @author Romerito Alencar 
  * Empresa: James Softeware
  * wwww.jamessoftware.com.br
  * Telefone 61 3054-6909
